@@ -8,8 +8,10 @@ RUN /usr/bin/easy_install supervisor-stdout
 
 ADD ./supervisord.conf /etc/supervisord.conf
 ADD ./start.sh /start.sh
+ADD ./pioinit.sh /pioinit.sh
 
-RUN chmod 755 /start.sh
+RUN chmod 700 /start.sh
+RUN chmod 700 /pioinit.sh
 
 ENV JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64" 
 ENV PIO_HOME="/root/PredictionIO"
